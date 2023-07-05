@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/chatbot"
+        android:enabled="true"
+        android:icon="@drawable/chat_"
+        android:title="Doctor" />
+    <item
+        android:id="@+id/shop"
+        android:enabled="true"
+        android:icon="@drawable/add_shop"
+        android:title="Shop" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/add_alarm"
+        android:enabled="true"
+        android:icon="@drawable/ic_new_alarm"
+        android:title="New Reminder" />
+    <item
+        android:id="@+id/maps"
+        android:enabled="true"
+        android:icon="@drawable/maps_"
+        android:title="Healthcare Facilities" />
+
+
+
+
+</menu>
