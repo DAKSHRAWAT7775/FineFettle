@@ -12,14 +12,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Login_main extends AppCompatActivity {
     EditText id,pswd;
     Button btn;
     CheckBox chkRememberMe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_main);
 
         id=findViewById(R.id.Username);
         pswd=findViewById(R.id.ePassword);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             pswd.setText(sf.getString("Password",""));
             chkRememberMe.setChecked(true);
             Toast.makeText(this, "Auto Login Successful", Toast.LENGTH_SHORT).show();
-            Intent i3=new Intent(MainActivity.this,MainActivity3.class);
+            Intent i3=new Intent(Login_main.this, Home.class);
             startActivity(i3);
             finish();
         }
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                     editor.commit();
                 }
 
-                Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                Intent i3=new Intent(MainActivity.this,MainActivity3.class);
+                Toast.makeText(Login_main.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                Intent i3=new Intent(Login_main.this, Home.class);
                 startActivity(i3);
                 finish();
             }

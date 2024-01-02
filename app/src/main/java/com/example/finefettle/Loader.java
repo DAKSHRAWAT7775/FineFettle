@@ -7,16 +7,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-public class MainActivity5 extends AppCompatActivity {
+public class Loader extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.loader);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_main);
 
         // on below line we are calling handler to run a task
         // for specific time interval
@@ -25,7 +25,7 @@ public class MainActivity5 extends AppCompatActivity {
             public void run() {
                 // on below line we are
                 // creating a new intent
-                Intent i = new Intent(MainActivity5.this, MainActivity.class);
+                Intent i = new Intent(Loader.this, Login_main.class);
 
                 // on below line we are
                 // starting a new activity.

@@ -2,11 +2,11 @@ package com.example.finefettle.ui.dashboard;
 
 
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +23,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.finefettle.AlarmReceiver;
-import com.example.finefettle.MainActivity3;
+import com.example.finefettle.Home;
 import com.example.finefettle.R;
 import com.example.finefettle.databinding.FragmentDashboardBinding;
 
@@ -58,6 +58,7 @@ public class DashboardFragment extends Fragment {
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ScheduleExactAlarm")
             @Override
             public void onClick(View v) {
                 Calendar calendar = Calendar.getInstance();
@@ -67,7 +68,7 @@ public class DashboardFragment extends Fragment {
 
                 Intent intent = new Intent(getContext(), AlarmReceiver.class);
                 pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, PendingIntent.FLAG_IMMUTABLE);
-                MainActivity3.AlarmHolder.pendingIntent = pendingIntent;
+                Home.AlarmHolder.pendingIntent = pendingIntent;
 
                 AlarmManager alarmManager = (AlarmManager) requireContext().getSystemService(Context.ALARM_SERVICE);
                 alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);

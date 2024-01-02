@@ -11,12 +11,12 @@ import android.widget.Toast;
 import android.content.Context;
 import java.util.Calendar;
 
-public class MainActivity7 extends AppCompatActivity {
+public class Set_Alarm extends AppCompatActivity {
     private TimePicker timePicker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main7);
+        setContentView(R.layout.set_alarm);
         timePicker = findViewById(R.id.timePicker);
         timePicker.setIs24HourView(true);
 
@@ -41,7 +41,7 @@ public class MainActivity7 extends AppCompatActivity {
     Context context=this;
     public void snooze(View view){
         Intent intent = new Intent(context, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
     }

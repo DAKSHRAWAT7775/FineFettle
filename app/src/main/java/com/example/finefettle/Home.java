@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -18,20 +16,20 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.finefettle.databinding.ActivityMain3Binding;
+import com.example.finefettle.databinding.HomeBinding;
 
-public class MainActivity3 extends AppCompatActivity {
+public class Home extends AppCompatActivity {
     public static class AlarmHolder {
         public static PendingIntent pendingIntent;
     }
 
-    private ActivityMain3Binding binding;
+    private HomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMain3Binding.inflate(getLayoutInflater());
+        binding = HomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -71,7 +69,7 @@ public class MainActivity3 extends AppCompatActivity {
 
         editor.commit();
 
-        Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+        Intent intent = new Intent(Home.this, Login_main.class);
         startActivity(intent);
         finish();
     }

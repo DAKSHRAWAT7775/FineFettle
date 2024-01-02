@@ -16,7 +16,7 @@ import com.example.finefettle.R;
 
 import java.util.Calendar;
 
-public class MainActivity6 extends AppCompatActivity {
+public class  MainActivity6 extends AppCompatActivity {
     TimePicker alarmTimePicker;
     PendingIntent pendingIntent;
     AlarmManager alarmManager;
@@ -47,7 +47,7 @@ public class MainActivity6 extends AppCompatActivity {
             Intent intent = new Intent(this, AlarmReceiver.class);
 
             // we call broadcast using pendingIntent
-            pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+            pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
             time = (calendar.getTimeInMillis() - (calendar.getTimeInMillis() % 60000));
             if (System.currentTimeMillis() > time) {
